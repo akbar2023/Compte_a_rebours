@@ -7,7 +7,7 @@
 
 let countdown;
 
-function timer(seconds = 10){
+function timer(seconds = 4){
     const now = Date.now();
     const then = now + seconds * 1000;
 
@@ -15,7 +15,7 @@ function timer(seconds = 10){
         const secondsLeft = Math.round((then - Date.now()) / 1000);
 
         // stop it
-        if(secondsLeft < 0){
+        if(secondsLeft <= 0){
             clearInterval(countdown);
             return;
         }
@@ -25,8 +25,10 @@ function timer(seconds = 10){
     }, 1000)
 }
 
-function displayTime(){
-    // Something here ...
+function displayTime(seconds){
+    console.log(seconds);
 }
 
 timer();
+
+displayTime()
