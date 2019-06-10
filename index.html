@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Compte à rebours</title>
 
+    <!-- Bootstrap -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+
     <!-- style -->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -13,7 +16,8 @@
     
         <form>
             <div class="hourZone">
-                <select name="hours" id="hours">
+                <h3>Hours</h3>
+                <select class="custom-select" size="5" name="hours" id="hours">
                 </select>
     
                 <!-- <label for="hours">Hours</label>
@@ -21,7 +25,8 @@
             </div>
     
             <div class="minZone">
-                <select name="minutes" id="minutes">
+                <h3>Minutes</h3>
+                <select size="5" name="minutes" id="minutes">
                 </select>
     
                 <!-- <label for="minutes">Minutes</label>
@@ -29,7 +34,8 @@
             </div>
     
             <div class="secZone">
-                <select name="seconds" id="seconds">
+                <h3>Seconds</h3>
+                <select size="5" name="seconds" id="seconds">
                 </select>
                 
                 <!-- <label for="seconds">Seconds</label>
@@ -39,15 +45,17 @@
             <button type="button" id="start">Start</button>
             <button type="button" id="pause">Pause</button>
             <button type="button" id="reset">Reset</button>
-        </for>
+        </form>
 
     
 
-        <svg viewBox="0 0 200 200">
-            <circle  cx="100" cy="100" r="80"></circle>
-            <text id="time" x="50" y="100" >I love SVG!</text>
-        </svg>
-    
+        <div class="clock">
+            <svg viewBox="0 0 200 200">
+                <circle  cx="100" cy="100" r="80"></circle>
+                <text id="time" x="50" y="100" >00h 00m 00s</text>
+            </svg>
+        
+        </div>
 
     <!-- Scripts -->
     <script src="assets/js/script.js"></script>

@@ -1,21 +1,40 @@
-#time{
-    
+
+*{
+    padding: 0; 
+    margin: 0;
 }
 
+.hourZone, .minZone, .secZone{
+    display: inline-block;
+}
+
+#start, #reset, #pause{
+    width: 100px;
+    border-radius: 5px;
+}
+#start{
+    background: #2a93da;
+    border: 2px solid #2a93da;
+}
+
+form{
+    margin: 50px 100px;
+}
+
+select{
+    border-radius: 10px;
+    border: 2px solid #2a93da;
+    width: 150px;
+}
+
+
 svg{
-    max-width: 200px;
-    /* margin-left: 200px; */
+    display: block;
+    max-width: 400px;
     margin: auto;
-    text-align: center;
 }
 
 svg circle{
-    /* text-colo: rgb(255, 142, 142); */
-    /* height:250px;
-    width:250px; */
-    /* border:2px solid #000; */
-    /* border-radius: 50%; */
-    /* padding:20px;  */
     fill: aquamarine;
     stroke:rgb(255, 142, 142);
     stroke-width:20.6871;

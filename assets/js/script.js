@@ -23,42 +23,67 @@ creatOptions(); // execution de la function createOptions
 
 
 
+// Start Timer
+function startTimer(){
 
-document.getElementById('start').addEventListener('click', function(){
+    let startButton = document.getElementById('start');    
+    startButton.addEventListener('click', function(){
 
-    let selectHours = document.getElementById('hours');
-    var getHours = selectHours.options[selectHours.selectedIndex].value;
+        let getHours = document.getElementById('hours').value;
+        let getMinutes = document.getElementById('minutes').value;
+        let getSeconds = document.getElementById('seconds').value;
 
+        let now = Date.now();
+        let setTime = now+getSeconds*1000+getMinutes*60*1000+getHours*60*60*1000;
 
-    let getMinutes = document.getElementById('minutes').value;
-    let getSeconds = document.getElementById('seconds').value;
-
-    let now = Date.now();
-    let setTime = now+getSeconds*1000+getMinutes*60*1000+getHours*60*60*1000;
-
-    setInterval(function(){ 
-        let chrono = Math.round((setTime - Date.now()) / 1000) + 1; 
-    
-        // chrono donne les bonnes valeurs aux variables correspondants
-        let hours = Math.floor(chrono / 3600);
-        chrono %= 3600;
-        let minutes = Math.floor(chrono / 60);
-        let seconds = chrono % 60;
+        setInterval(function(){ 
+            let chrono = Math.round((setTime - Date.now()) / 1000) + 1; 
         
-        if(chrono < 0){
-            return;
-        }else{
-            // console.log(chrono);
-            // If you want strings with leading zeroes:
-            minutes = String(minutes).padStart(2, "0");
-            hours = String(hours).padStart(2, "0");
-            seconds = String(seconds).padStart(2, "0");
-            // console.log(hours + ":" + minutes + ":" + seconds);
-            document.getElementById('time').innerHTML = hours + "h " + minutes + "m " + seconds + "s";
-        }    
-    }, 1000);
+            // chrono donne les bonnes valeurs aux variables correspondants
+            let hours = Math.floor(chrono / 3600);
+            chrono %= 3600;
+            let minutes = Math.floor(chrono / 60);
+            let seconds = chrono % 60;
+            
+            if(chrono < 0){
+                return;
+            }else{
+                if(chrono < 31){
+                    document.querySelector('circle').style.fill = 'white';
+                    document.querySelector('circle').style.stroke = 'red';
+                    document.querySelector('text').style.stroke = 'red';
+                }
+                // If you want strings with leading zeroes:
+                minutes = String(minutes).padStart(2, "0");
+                hours = String(hours).padStart(2, "0");
+                seconds = String(seconds).padStart(2, "0");
+                // console.log(hours + ":" + minutes + ":" + seconds);
+                document.getElementById('time').innerHTML = hours + "h " + minutes + "m " + seconds + "s";
+            }    
+        }, 1000);
 
-});
+    });
+
+};
+// Fin Timer
+
+startTimer();
+    
+
+
+
+// Reset Timer
+
+function resetTimer(){
+    let resetButton = document.getElementById('reset');
+    resetButton.addEventListener('click', function(){
+
+        document.getElementById('time').innerHTML = 'Reset done!';
+
+    })
+};
+
+resetTimer();
 
 
 
