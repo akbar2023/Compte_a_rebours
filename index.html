@@ -10,29 +10,44 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <div class="SetTime">
-        <div class="hourZone">
-            <label for="hours">Hours</label>
-            <input type="number" id="hours">
-        </div>
+    
+        <form>
+            <div class="hourZone">
+                <select name="hours" id="hours">
+                </select>
+    
+                <!-- <label for="hours">Hours</label>
+                <input type="number" id="hours" value="0"> -->
+            </div>
+    
+            <div class="minZone">
+                <select name="minutes" id="minutes">
+                </select>
+    
+                <!-- <label for="minutes">Minutes</label>
+                <input type="number" id="minutes" value="0"> -->
+            </div>
+    
+            <div class="secZone">
+                <select name="seconds" id="seconds">
+                </select>
+                
+                <!-- <label for="seconds">Seconds</label>
+                <input type="number" id="seconds" value="10"> -->
+            </div>
 
-        <div class="minZone">
-            <label for="minutes">Minutes</label>
-            <input type="number" id="minutes">
-        </div>
+            <button type="button" id="start">Start</button>
+            <button type="button" id="pause">Pause</button>
+            <button type="button" id="reset">Reset</button>
+        </for>
 
-        <div class="secZone">
-            <label for="seconds">Seconds</label>
-            <input type="number" id="seconds">
-        </div>
+    
 
-
-        <div id="timeRemaining">
-            
-        </div>
-
-
-    </div>
+        <svg viewBox="0 0 200 200">
+            <circle  cx="100" cy="100" r="80"></circle>
+            <text id="time" x="50" y="100" >I love SVG!</text>
+        </svg>
+    
 
     <!-- Scripts -->
     <script src="assets/js/script.js"></script>
