@@ -4,27 +4,65 @@
     margin: 0;
 }
 
+body{background: rgb(251, 244, 230);}
+
 .hourZone, .minZone, .secZone{
     display: inline-block;
+    margin: auto 5px;
+}
+
+
+/* Buttons */
+.buttons {
+    display: flex;
+    justify-content: center;    
 }
 
 #start, #reset, #pause{
+    cursor: pointer;
     width: 100px;
     border-radius: 5px;
-}
-#start{
-    background: #2a93da;
-    border: 2px solid #2a93da;
+    margin: 20px 5px;
 }
 
-form{
-    margin: 50px 100px;
+#start{
+    background: #5c7ff3;
+    border: 2px solid #5c7ff3;
+    padding: 5px;
 }
+#start:hover{border-color:#b7dcf5;}
+
+#reset{
+    background: #f57777;
+    border: 2px solid #f57777;
+    padding: 5px;
+}
+#reset:hover{border-color:#f7bebe;}
+
+#pause{
+    background: #0AFFB1;
+    border: 2px solid #0AFFB1;
+    padding: 5px;
+}
+#pause:hover{border-color:#b8f7d0;}
+
+/* form selects */
+
+@media screen and (min-width: 640px) {
+    form{margin: 20px 100px;}    
+  }
+
+form{
+    display: flex;
+    justify-content: center;
+    
+}
+
 
 select{
     border-radius: 10px;
     border: 2px solid #2a93da;
-    width: 150px;
+    width: 100px;
 }
 
 
@@ -35,13 +73,13 @@ svg{
 }
 
 svg circle{
-    fill: aquamarine;
-    stroke:rgb(255, 142, 142);
-    stroke-width:20.6871;
-    stroke-miterlimit:10;
+    stroke:#f57777;
+    stroke-width:20;
+    fill:rgb(0, 0, 0);
 }
 
 svg text {
     font-size: 20px;
-    fill:rgb(255, 142, 142);
+    fill: #0AFFB1;
+    font-family: 'Lobster', cursive;
 }
